@@ -8,4 +8,8 @@ public class Multiplication {
     public void exampleOfTestNgMaven() {
         System.out.println("This is TestNG-Maven Example - Multiplication");
     }
+    @Test ( priority = 1 )
+    public void exampleOfTestNgMaven1() {
+        System.out.println("This is TestNG-Maven Example - Multiplication -exampleOfTestNgMaven1 ");
+    }
 }

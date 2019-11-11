@@ -6,6 +6,7 @@
   <test name="flipkart">
 	 <classes>
 	   <class name="test.java.arithmeticOperation.Addition"/>
+	   <class name="test.java.arithmeticOperation.Division"/>
 	   <class name="test.java.arithmeticOperation.Multiplication"/>
 	   <class name="test.java.arithmeticOperation.Subtraction"/>
 	 </classes>
