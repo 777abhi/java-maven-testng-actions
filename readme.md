@@ -109,7 +109,7 @@ We have already created some java class under googleSearch package in src/test/j
         │               └── GoogleSearch.java
         └── testng.xml
 
-vi src/test/java/googleSearch/GoogleSearch.java
+
 
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">	
@@ -143,6 +143,23 @@ We have already created some java class under googleSearch package in src/test/j
 3) Once done with scripting come to the project folder where the pom.xml file is present.
 
 4) Now Let's execute the test with the help of maven command mvn clean install | tee output.txt
+
+
+
+└── TestNG_Dataprovider
+    ├── Log4j.properties
+    ├── pom.xml
+    ├── src
+    │   └── test
+    │       └── java
+    │           └── googleSearch
+    │               └── GoogleSearch.java
+    └── testng.xml
+
+   vi src/test/java/googleSearch/GoogleSearch.java
+
+
+
 ##hands on 7
 Type ls to find the project SeleniumAdv and get into the folder by typing cd SeleniumAdv
 
