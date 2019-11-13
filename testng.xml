@@ -2,20 +2,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">	
 
 <suite thread-count="1" verbose="1" name="Gmail Suite" annotations="JDK" parallel="tests">
-         
-  <test name="flipkart">
-
-        <groups>
-         <run>
-            <include name = "checkintest" />
-         </run>
-      </groups>
-
-	 <classes>
-	   <class name="test.java.arithmeticOperation.Addition"/>
-	   <class name="test.java.arithmeticOperation.Division"/>
-	   <class name="test.java.arithmeticOperation.Multiplication"/>
-	   <class name="test.java.arithmeticOperation.Subtraction"/>
-	 </classes>
-   </test>
+          <test name="Parameter Test three">
+        <!-- Overriding suite level parameter -->
+        <parameter name="suite-param" value="https://www.google.com/" />
+        <!-- Test specific parameter -->
+        <parameter name="test-three-param" value="Fresco Play" />
+        <classes>
+            <class name="test.java.arithmeticOperation.Addition">
+                <methods>
+                    <include name="sampleTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>

@@ -44,6 +44,38 @@
 
 5) Now Let's execute the test with the help of maven command
 
+
+.
+├── pom.xml
+├── src
+│   └── test
+│       └── java
+│           └── arithmeticOperators
+│               └── Arithmetic.java
+└── testng.xml
+
+vi src/test/java/arithmeticOperators/Arithmetic.java
+
+(groups = { "checkintest" })
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">	
+
+<suite thread-count="1" verbose="1" name="Gmail Suite" annotations="JDK" parallel="tests">
+         
+  <test name="flipkart">
+
+        <groups>
+         <run>
+            <include name = "checkintest" />
+         </run>
+      </groups>
+
+	 <classes>
+	   <class name="arithmeticOperators.Arithmetic"/>
+	 </classes>
+   </test>
+</suite>
+
 ##hands on 5
 Click the below command to download phantomjs driver. wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 && tar xvjf phantomjs-2.1.1-linux-x86_64.tar.bz2 && rm -f *.bz2
 
@@ -60,6 +92,41 @@ We have already created some java class under googleSearch package in src/test/j
 4) Once done with scripting come to the project folder where the pom.xml file is present.
 
 5) Now Let's execute the test with the help of maven command mvn clean install | tee output.txt
+
+
+
+
+
+.
+└── SeleniumAdv
+    └── TestNG_Parameters
+        ├── Log4j.properties
+        ├── pom.xml
+        ├── src
+        │   └── test
+        │       └── java
+        │           └── googleSearch
+        │               └── GoogleSearch.java
+        └── testng.xml
+
+vi src/test/java/googleSearch/GoogleSearch.java
+
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">	
+
+<suite thread-count="1" verbose="1" name="Gmail Suite" annotations="JDK" parallel="tests">
+          <test name="Parameter Test three">
+        <!-- Overriding suite level parameter -->
+        <parameter name="suite-param" value="https://www.google.com/" />
+        <!-- Test specific parameter -->
+        <parameter name="test-three-param" value="Fresco Play" />
+        <classes>
+            <class name="googleSearch.GoogleSearch">
+            </class>
+        </classes>
+    </test>
+</suite>
+
 ##hands on 6
 Type ls to find the project SeleniumAdv and get into the folder by typing cd SeleniumAdv
 
