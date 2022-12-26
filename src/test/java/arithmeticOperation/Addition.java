@@ -11,16 +11,16 @@ public class Addition {
 
     @Test
     public void openBrowser(){
-        // use WebDriverManager to download and configure the ChromeDriver binary
-        WebDriverManager.chromedriver().setup();
+        // // use WebDriverManager to download and configure the ChromeDriver binary
+        // WebDriverManager.chromedriver().setup();
     
-        // create a new instance of the ChromeDriver class
-        WebDriver driver = new ChromeDriver();
+        // // create a new instance of the ChromeDriver class
+        // WebDriver driver = new ChromeDriver();
     
-        // use the get() method to navigate to a webpage
-        driver.get("http://www.example.com");
+        // // use the get() method to navigate to a webpage
+        // driver.get("http://www.example.com");
 
-        driver.quit();
+        // driver.quit();
 
     }
 
