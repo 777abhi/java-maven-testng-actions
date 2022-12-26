@@ -9,9 +9,6 @@
         <parameter name="test-three-param" value="Fresco Play" />
         <classes>
             <class name="test.java.arithmeticOperation.Addition">
-                <methods>
-                    <include name="sampleTest" />
-                </methods>
             </class>
         </classes>
     </test>
