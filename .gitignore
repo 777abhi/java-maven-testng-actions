@@ -3,3 +3,4 @@
 
 target/
 *.versionsBackup
+.DS_Store
