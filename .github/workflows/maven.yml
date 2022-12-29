@@ -2,7 +2,6 @@ name: Java CI with Maven
 
 on:
   workflow_dispatch:
-  workflow_call:
     inputs:
       environment:
         description: 'Environment - e2e_integration, s1, s2, s3, s4, all'
