@@ -31,7 +31,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ environment_name }}/${{ scope_name }}.xml
+      run: mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ inputs.environment_name }}/${{ inputs.scope_name }}.xml
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3
       with:
