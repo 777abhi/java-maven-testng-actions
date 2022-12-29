@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
   workflow_call:
     inputs:
-     environment:
+      environment:
         description: 'Environment - e2e_integration, s1, s2, s3, s4, all'
         default: 'e2e_integration'
         required: true
         type: string
-     scope:
+      scope:
         description: 'Type of scoped cases - newfeature_testng, regression_testng, sanity_testng'
         default: 'sanity_testng'
         required: true
