@@ -3,12 +3,12 @@ name: Java CI with Maven
 on:
   workflow_dispatch:
     inputs:
-      environment:
+      environment_name:
         description: 'Environment - e2e_integration, s1, s2, s3, s4, all'
         default: 'e2e_integration'
         required: true
         type: string
-      scope:
+      scope_name:
         description: 'Type of scoped cases - newfeature_testng, regression_testng, sanity_testng'
         default: 'sanity_testng'
         required: true
@@ -31,7 +31,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ environment }}/${{ scope }}.xml
+      run: mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ environment_name }}/${{ scope_name }}.xml
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3
       with:
