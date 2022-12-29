@@ -20,7 +20,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=testng.xml
+      run: mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=sanity_testng.xml
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3
       with:
