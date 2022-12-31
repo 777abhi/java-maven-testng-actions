@@ -1,5 +1,9 @@
-https://github.com/igniteram/testng-cucumber/tree/master/src/test
+# Contains wf based on principles defined here 
+https://github.com/777abhi/arch-dia#arch-dia
 
+
+
+# Misc.
 docker build --pull --rm -f "Dockerfile" -t testjavamaven:latest "."
 
 docker build -t testjavamaven:latest --platform linux/amd64 .
