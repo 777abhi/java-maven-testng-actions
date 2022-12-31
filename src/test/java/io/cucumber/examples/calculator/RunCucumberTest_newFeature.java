@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(plugin = { "html:target/results.html", "message:target/results.ndjson" }, tags = "@newfeature")
-public class RunCucumberTestNewfeature extends AbstractTestNGCucumberTests {
+public class RunCucumberTest_newFeature extends AbstractTestNGCucumberTests {
 
     @DataProvider(parallel = true)
     @Override
