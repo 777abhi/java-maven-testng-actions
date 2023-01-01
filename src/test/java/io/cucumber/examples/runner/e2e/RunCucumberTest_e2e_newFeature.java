@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-    plugin = { "html:target/results.html", "message:target/results.ndjson" }
+    plugin = { "html:target/results.html", "message:target/results.ndjson" },
     features = {"src/test/resources/features" },
 	glue = {"io.cucumber.examples.calculator"},
     tags = "@newfeature")
