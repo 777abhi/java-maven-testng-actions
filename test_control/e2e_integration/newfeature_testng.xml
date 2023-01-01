@@ -3,7 +3,7 @@
 <suite name="Suite">
     <test name="Test">
          <classes>
-             <class name="io.cucumber.examples.runner.RunCucumberTest_e2e_newFeature"/>
+             <class name="io.cucumber.examples.runner.e2e.RunCucumberTest_e2e_newFeature"/>
           </classes>
      </test> <!-- Test -->
 </suite> <!-- Suite -->
