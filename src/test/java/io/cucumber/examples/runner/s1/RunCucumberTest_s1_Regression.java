@@ -4,7 +4,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
-@CucumberOptions(plugin = { "html:target/results.html", "message:target/results.ndjson" }, tags = "@regression")
+@CucumberOptions(plugin = { "html:target/results.html", "message:target/results.ndjson" }, tags = "@s1_regression")
 public class RunCucumberTest_s1_Regression extends AbstractTestNGCucumberTests {
 
     @DataProvider(parallel = true)
