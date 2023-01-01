@@ -3,7 +3,7 @@
 <suite name="Suite">
     <test name="Test">
          <classes>
-             <class name="io.cucumber.examples.calculator.RunCucumberTest_newFeature"/>
+             <class name="io.cucumber.examples.runner.RunCucumberTest_e2e_Regression"/>
           </classes>
      </test> <!-- Test -->
 </suite> <!-- Suite -->
