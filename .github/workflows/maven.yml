@@ -18,18 +18,16 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     container:
-      image: amazoncorretto
-    services:
-      selenium:
-        image: selenium/standalone-chrome
-        options: --shm-size=2g
+      image: selenium/standalone-chrome
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Run tests
+      - name: Install Maven
+        run: sudo apt-get install maven
+      - name: Run Selenium test
         run: |
           ls
-          mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ inputs.environment_name }}/${{ inputs.scope_name }}.xml -Dwebdriver.remote.url=http://selenium:4444/wd/hub
+          mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ inputs.environment_name }}/${{ inputs.scope_name }}.xml
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
         if: always()
