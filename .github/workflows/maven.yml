@@ -21,7 +21,9 @@ jobs:
       image: selenium/standalone-chrome
       options: --shm-size=2g --tmpfs /tmp
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2        
+        with:
+          path: /tmp
       - name: Run tests
         env:
           TMPDIR: /tmp
