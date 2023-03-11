@@ -25,7 +25,7 @@ jobs:
       - name: Run tests
         run: mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ inputs.environment_name }}/${{ inputs.scope_name }}.xml
       - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: html test report - ${{inputs.environment_name}} ${{inputs.scope_name}}
-        path: target/results.html
+        uses: actions/upload-artifact@v3
+        with:
+          name: html test report - ${{inputs.environment_name}} ${{inputs.scope_name}}
+          path: target/results.html
