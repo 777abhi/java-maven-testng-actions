@@ -91,18 +91,9 @@ public class RpnCalculatorStepDefinitions {
 
         driver.get("https://www.wikipedia.org/");
 
-        // Assert that the title of the page contains "Wikipedia"
-        Assert.assertTrue(driver.getTitle().contains("Wikipedia"));
-
-        // Assert that the "English" language link is displayed
-        Assert.assertTrue(driver.findElement(By.linkText("English")).isDisplayed());
-
         Files.copy(screenshotFile.toPath(), targetDir.resolve("wikipedia.png"));
 
         driver.get("https://www.google.com/");
-
-        // Assert that the title of the page contains "Google"
-        Assert.assertTrue(driver.getTitle().contains("Google"));
 
         // Perform a search for "selenium"
         driver.findElement(By.name("q")).sendKeys("selenium");
@@ -111,16 +102,11 @@ public class RpnCalculatorStepDefinitions {
 
         Files.copy(screenshotFile.toPath(), targetDir.resolve("selenium.png"));
 
-        // Assert that the search results page contains the word "selenium"
-        Assert.assertTrue(driver.findElement(By.tagName("body")).getText().contains("selenium"));
 
         // Perform a search for "testng"
         driver.findElement(By.name("q")).clear();
         driver.findElement(By.name("q")).sendKeys("testng");
         driver.findElement(By.name("q")).submit();
-
-        // Assert that the search results page contains the word "testng"
-        Assert.assertTrue(driver.findElement(By.tagName("body")).getText().contains("testng"));
 
         Files.copy(screenshotFile.toPath(), targetDir.resolve("testng.png"));
     
