@@ -17,6 +17,16 @@ on:
 jobs:
   run-tests:
     runs-on: ubuntu-latest
+    container:
+      image: maven
+      options: --tmpfs /tmp:rw
+    services:
+      selenium:
+        image: selenium/standalone-chrome
+        container-name: selenium
+        options: --shm-size=2g
+        ports:
+          - 4444:4444
     steps:
       - name: Run ls
         run: |
