@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:11.6-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV MAVEN_VERSION=3.8.6
