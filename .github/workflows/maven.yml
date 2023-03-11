@@ -23,15 +23,12 @@ jobs:
         - /tmp:/tmp
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          path: /__w/_temp/
+        uses: actions/checkout@v3
       - name: Install Maven
         run: sudo apt-get install maven
       - name: Run Selenium test
         run: |
           ls
-          cd /__w/_temp/
           mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ inputs.environment_name }}/${{ inputs.scope_name }}.xml
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
