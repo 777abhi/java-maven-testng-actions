@@ -23,8 +23,6 @@ jobs:
       selenium:
         image: selenium/standalone-chrome
         options: --shm-size=2g
-        ports:
-          - 4444:4444
     steps:
       - name: Run ls
         run: |
