@@ -18,13 +18,20 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     container:
-      image: selenium/standalone-chrome
-      options: --tmpfs /tempdir:rw
+      image: maven
     steps:
-      - name: Run my command
+      - name: Run ls
         run: |
           ls
-          mkdir /tempdir/mydir
-          echo "Hello world" > /tempdir/mydir/myfile.txt
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Run Selenium test
+        run: |
           ls
-          dir
+          mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ inputs.environment_name }}/${{ inputs.scope_name }}.xml
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: target-folder
+          path: target
