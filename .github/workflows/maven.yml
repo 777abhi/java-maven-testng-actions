@@ -18,7 +18,7 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     container:
-      image: maven:3.8.3-jdk-11
+      image: amazoncorretto
     services:
       selenium:
         image: selenium/standalone-chrome
@@ -34,5 +34,5 @@ jobs:
         uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: html test report - ${{inputs.environment_name}} ${{inputs.scope_name}}
-          path: target/results.html
+          name: target-folder
+          path: target
