@@ -1,6 +1,7 @@
 name: main caller wf
 
 on:
+  push:
   workflow_dispatch:
     inputs:
       environment_name:
