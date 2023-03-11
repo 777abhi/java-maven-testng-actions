@@ -18,17 +18,16 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     container:
-      image: selenium/standalone-chrome
-      options: --shm-size=2g
-    steps:      
-      - name: Fix permissions
-        run: chmod -R 777 /__w/_temp/
-      - uses: actions/checkout@v2
-        with:
-          path: /__w/_temp/
+      image: maven:3.8.3-jdk-11
+    services:
+      selenium:
+        image: selenium/standalone-chrome
+        options: --shm-size=2g
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Run tests
         run: |
-          cd /__w/_temp/
           mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ inputs.environment_name }}/${{ inputs.scope_name }}.xml
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
