@@ -17,8 +17,6 @@ on:
 jobs:
   run-tests:
     runs-on: ubuntu-latest
-    container:
-      image: maven
     steps:
       - name: Run ls
         run: |
