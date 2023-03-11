@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: maven
-      options: --tmpfs /tmp:rw
     services:
       selenium:
         image: selenium/standalone-chrome
@@ -41,5 +40,5 @@ jobs:
         uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: target-folder
-          path: target
+          name: test-result-${{ inputs.environment_name }}-${{ inputs.scope_name }}
+          path: target/*.html
