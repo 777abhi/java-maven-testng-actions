@@ -12,12 +12,20 @@ import io.cucumber.java.en.When;
 
 import java.util.List;
 import java.util.Map;
+
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import static org.testng.Assert.assertEquals;
 
@@ -51,7 +59,7 @@ public class RpnCalculatorStepDefinitions {
     }
 
     @When("I add {int} and {int}")
-    public void adding(int arg1, int arg2) throws MalformedURLException {
+    public void adding(int arg1, int arg2) throws IOException {
 
 
     // Create desired capabilities for Chrome browser
@@ -65,6 +73,23 @@ public class RpnCalculatorStepDefinitions {
 
     // Navigate to a web page and perform tests
     driver.get("http://www.example.com/");
+
+    // Assert that the page title contains the expected string
+    String expectedTitle = "Example Domain";
+    String actualTitle = driver.getTitle();
+    Assert.assertTrue(actualTitle.contains(expectedTitle), "Page title does not contain expected string: " + expectedTitle);
+    
+    // Take a screenshot if the assertion fails
+        // Create the target directory if it does not already exist
+        Path targetDir = Paths.get("target/screenshots");
+        if (!Files.exists(targetDir)) {
+            Files.createDirectories(targetDir);
+        }
+        
+        // Take the screenshot and save it to the target directory
+        File screenshotFile = ((RemoteWebDriver) driver).getScreenshotAs(OutputType.FILE);
+        Files.copy(screenshotFile.toPath(), targetDir.resolve("failure.png"));
+
     // ...
 
     // Close the browser and end the Selenium session
