@@ -22,7 +22,6 @@ jobs:
     services:
       selenium:
         image: selenium/standalone-chrome
-        options: --shm-size=2g
     steps:
       - name: Run ls
         run: |
@@ -38,5 +37,5 @@ jobs:
         uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: test-result-${{ inputs.environment_name }}-${{ inputs.scope_name }}
-          path: target/*.html
+          name: target-folder
+          path: target
