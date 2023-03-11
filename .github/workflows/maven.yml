@@ -22,10 +22,13 @@ jobs:
       options: --shm-size=2g
     steps:      
       - name: Fix permissions
-        run: chmod -R 777 /__w
+        run: chmod -R 777 /__w/_temp/
       - uses: actions/checkout@v2
+        with:
+          path: /__w/_temp/
       - name: Run tests
         run: |
+          cd /__w/_temp/
           mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ inputs.environment_name }}/${{ inputs.scope_name }}.xml
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
