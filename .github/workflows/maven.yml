@@ -1,4 +1,4 @@
-name: re-usable flow java maven
+name: automation-pack-docker-mavem-selenium
 
 on:
   workflow_call:
