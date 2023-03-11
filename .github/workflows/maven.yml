@@ -36,7 +36,7 @@ jobs:
         run: |
           ls
           mvn clean
-          mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ inputs.environment_name }}/${{ inputs.scope_name }}.xml
+          mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ inputs.environment_name }}/${{ inputs.scope_name }}.xml -Dwebdriver.chrome.url=http://selenium:4444/wd/hub
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
         if: always()

@@ -12,6 +12,12 @@ import io.cucumber.java.en.When;
 
 import java.util.List;
 import java.util.Map;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import static org.testng.Assert.assertEquals;
 
@@ -45,7 +51,25 @@ public class RpnCalculatorStepDefinitions {
     }
 
     @When("I add {int} and {int}")
-    public void adding(int arg1, int arg2) {
+    public void adding(int arg1, int arg2) throws MalformedURLException {
+
+
+    // Create desired capabilities for Chrome browser
+    DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+            
+    // Specify remote URL for Selenium server
+    URL url = new URL(System.getProperty("webdriver.chrome.url"));
+
+    // Create a RemoteWebDriver instance with the specified capabilities and URL
+    WebDriver driver = new RemoteWebDriver(url, capabilities);
+
+    // Navigate to a web page and perform tests
+    driver.get("http://www.example.com/");
+    // ...
+
+    // Close the browser and end the Selenium session
+    driver.quit();
+
         calc.push(arg1);
         calc.push(arg2);
         calc.push("+");
