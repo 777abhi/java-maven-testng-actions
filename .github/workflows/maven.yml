@@ -40,7 +40,8 @@ jobs:
         with:
           name: target-folder
           path: target
-      - name: HTML Preview
-        uses: pavi2410/html-preview-action@v2
+      - name: GitHub Pages v3
+        uses: peaceiris/actions-github-pages@v3.1.12
         with:
-          html_file: target/results.html    
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: target
