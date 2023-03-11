@@ -32,6 +32,7 @@ jobs:
           mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ inputs.environment_name }}/${{ inputs.scope_name }}.xml -Dwebdriver.remote.url=http://selenium:4444/wd/hub
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
+        if: always()
         with:
           name: html test report - ${{inputs.environment_name}} ${{inputs.scope_name}}
           path: target/results.html
