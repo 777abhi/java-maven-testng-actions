@@ -20,15 +20,12 @@ jobs:
     container:
       image: selenium/standalone-chrome
       options: --shm-size=2g
-    steps:
-      - uses: actions/checkout@v2        
-        with:
-          path: /tmp/repo
+    steps:      
+      - name: Fix permissions
+        run: chmod -R 777 /__w
+      - uses: actions/checkout@v2
       - name: Run tests
-        env:
-          TMPDIR: /tmp
         run: |
-          cd /tmp/repo
           mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ inputs.environment_name }}/${{ inputs.scope_name }}.xml
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
