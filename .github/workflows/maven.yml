@@ -19,15 +19,17 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: selenium/standalone-chrome
-      options: --shm-size=2g --tmpfs /tmp
+      options: --shm-size=2g
     steps:
       - uses: actions/checkout@v2        
         with:
-          path: /tmp
+          path: /tmp/repo
       - name: Run tests
         env:
           TMPDIR: /tmp
-        run: mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ inputs.environment_name }}/${{ inputs.scope_name }}.xml
+        run: |
+          cd /tmp/repo
+          mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ inputs.environment_name }}/${{ inputs.scope_name }}.xml
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
         with:
