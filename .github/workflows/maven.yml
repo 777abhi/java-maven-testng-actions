@@ -28,6 +28,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Run tests
         run: |
+          ls
           mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ inputs.environment_name }}/${{ inputs.scope_name }}.xml -Dwebdriver.remote.url=http://selenium:4444/wd/hub
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3

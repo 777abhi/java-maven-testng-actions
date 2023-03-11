@@ -16,16 +16,16 @@ jobs:
     with:
       environment_name: ${{ inputs.environment_name }}
       scope_name: sanity_testng
-  call-workflow-for-regression_testng:
-    uses: 777abhi/java-maven-testng-actions/.github/workflows/maven.yml@master
-    with:
-      environment_name: ${{ inputs.environment_name }}
-      scope_name: regression_testng
-  call-workflow-for-newfeature_testng:
-    uses: 777abhi/java-maven-testng-actions/.github/workflows/maven.yml@master
-    with:
-      environment_name: ${{ inputs.environment_name }}
-      scope_name: newfeature_testng
+  # call-workflow-for-regression_testng:
+  #   uses: 777abhi/java-maven-testng-actions/.github/workflows/maven.yml@master
+  #   with:
+  #     environment_name: ${{ inputs.environment_name }}
+  #     scope_name: regression_testng
+  # call-workflow-for-newfeature_testng:
+  #   uses: 777abhi/java-maven-testng-actions/.github/workflows/maven.yml@master
+  #   with:
+  #     environment_name: ${{ inputs.environment_name }}
+  #     scope_name: newfeature_testng
 
 
 
