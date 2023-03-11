@@ -86,12 +86,12 @@ public class RpnCalculatorStepDefinitions {
         }
         
         // Take the screenshot and save it to the target directory
-        File screenshotFile = ((RemoteWebDriver) driver).getScreenshotAs(OutputType.FILE);
-        Files.copy(screenshotFile.toPath(), targetDir.resolve("example.png"));
+        //File screenshotFile = ((RemoteWebDriver) driver).getScreenshotAs(OutputType.FILE);
+        Files.copy(((RemoteWebDriver) driver).getScreenshotAs(OutputType.FILE).toPath(), targetDir.resolve("example.png"));
 
         driver.get("https://www.wikipedia.org/");
 
-        Files.copy(screenshotFile.toPath(), targetDir.resolve("wikipedia.png"));
+        Files.copy(((RemoteWebDriver) driver).getScreenshotAs(OutputType.FILE).toPath(), targetDir.resolve("wikipedia.png"));
 
         driver.get("https://www.google.com/");
 
@@ -100,7 +100,7 @@ public class RpnCalculatorStepDefinitions {
         driver.findElement(By.name("q")).submit();
 
 
-        Files.copy(screenshotFile.toPath(), targetDir.resolve("selenium.png"));
+        Files.copy(((RemoteWebDriver) driver).getScreenshotAs(OutputType.FILE).toPath(), targetDir.resolve("selenium.png"));
 
 
         // Perform a search for "testng"
@@ -108,7 +108,7 @@ public class RpnCalculatorStepDefinitions {
         driver.findElement(By.name("q")).sendKeys("testng");
         driver.findElement(By.name("q")).submit();
 
-        Files.copy(screenshotFile.toPath(), targetDir.resolve("testng.png"));
+        Files.copy(((RemoteWebDriver) driver).getScreenshotAs(OutputType.FILE).toPath(), targetDir.resolve("testng.png"));
     
         
 
