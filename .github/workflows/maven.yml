@@ -21,22 +21,8 @@ jobs:
       image: selenium/standalone-chrome
       options: --tmpfs /tempdir:rw
     steps:
-      - name: Run ls
-        run: |
-          ls
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          path: /tempdir
-      - name: Run Selenium test
+      - name: Run my command
         run: |
           ls
           mkdir /tempdir/mydir
-          cd /tempdir/mydir
-          mvn -ntp -B -q clean test -Dsurefire.suiteXmlFiles=test_control/${{ inputs.environment_name }}/${{ inputs.scope_name }}.xml
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: target-folder
-          path: target
+          echo "Hello world" > /tempdir/mydir/myfile.txt
