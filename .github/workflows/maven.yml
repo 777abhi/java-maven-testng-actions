@@ -22,6 +22,7 @@ jobs:
     services:
       selenium:
         image: selenium/standalone-chrome
+        options: --shm-size=2g
     steps:
       - name: Run ls
         run: |
