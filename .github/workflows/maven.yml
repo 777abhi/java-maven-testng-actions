@@ -26,3 +26,5 @@ jobs:
           ls
           mkdir /tempdir/mydir
           echo "Hello world" > /tempdir/mydir/myfile.txt
+          ls
+          dir
