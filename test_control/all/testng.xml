@@ -3,7 +3,7 @@
 <suite name="Suite">
     <test name="Test">
          <classes>
-             <class name="io.cucumber.examples.calculator.RunCucumberTest"/>
+             <class name="io.cucumber.examples.runner.all.RunCucumberTest_all"/>
           </classes>
      </test> <!-- Test -->
 </suite> <!-- Suite -->
