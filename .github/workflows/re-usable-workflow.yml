@@ -21,10 +21,10 @@ jobs:
       image: maven
     services:  
       hub:
-      image: selenium/hub
-      ports:
-        - "4444:4444"
-      container_name: selenium-hub
+        image: selenium/hub
+        ports:
+          - "4444:4444"
+        container_name: selenium-hub
       node-chrome1:
         image: selenium/node-chrome
         env:
