@@ -24,14 +24,12 @@ jobs:
         image: selenium/hub
         ports:
           - "4444:4444"
-        options: --name selenium-hub
       node-chrome1:
         image: selenium/node-chrome
         env:
-          HUB_HOST: selenium-hub
+          HUB_HOST: hub
         ports:
           - "5900:5900"
-        options: --name chrome-node-1
     steps:
       - name: Run ls
         run: |
