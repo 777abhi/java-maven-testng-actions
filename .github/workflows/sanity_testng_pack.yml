@@ -1,0 +1,26 @@
+name: sanity_testng_pack
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      environment_name:
+        description: 'Environment - e2e_integration, s1, s2, s3, s4, all'
+        default: 'e2e_integration'
+        required: true
+        type: string
+      scope_name:
+        description: 'Type of scoped cases - newfeature_testng, regression_testng, sanity_testng'
+        default: 'sanity_testng'
+        required: true
+        type: string
+
+jobs:
+  call-workflow-for-sanity_testng:
+  steps:
+    uses: 777abhi/java-maven-testng-actions/.github/workflows/re-usable-automation-pack-docker-maven-selenium.yml@master
+    with:
+      environment_name: e2e_integration
+      scope_name: sanity_testng
+
+

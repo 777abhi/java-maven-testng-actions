@@ -1,4 +1,4 @@
-name: automation-pack-docker-mavem-selenium
+name: re-usable-automation-pack-docker-maven-selenium
 
 on:
   workflow_call:
