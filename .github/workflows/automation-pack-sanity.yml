@@ -1,4 +1,4 @@
-name: sanity_testng_pack
+name: automation-pack-sanity
 
 on:
   push:
@@ -17,7 +17,7 @@ on:
 
 jobs:
   call-workflow-for-sanity_testng:
-    uses: 777abhi/java-maven-testng-actions/.github/workflows/re-usable-automation-pack-docker-maven-selenium.yml@master
+    uses: 777abhi/java-maven-testng-actions/.github/workflows/re-usable-workflow.yml@master
     with:
       environment_name: e2e_integration
       scope_name: sanity_testng
