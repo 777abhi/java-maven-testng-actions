@@ -65,7 +65,7 @@ public class RpnCalculatorStepDefinitions {
     ChromeOptions options = new ChromeOptions();
             
     // Specify remote URL for Selenium server
-    URL url = new URL(System.getProperty("remoteWebDriverUrl"));
+    URL url = new URL(System.getProperty("webdriver.remote.url"));
 
     // Create a RemoteWebDriver instance with the specified capabilities and URL
     WebDriver driver = new RemoteWebDriver(url, options);
