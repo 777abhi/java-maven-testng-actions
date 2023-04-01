@@ -17,7 +17,6 @@ on:
 
 jobs:
   call-workflow-for-sanity_testng:
-  steps:
     uses: 777abhi/java-maven-testng-actions/.github/workflows/re-usable-automation-pack-docker-maven-selenium.yml@master
     with:
       environment_name: e2e_integration
