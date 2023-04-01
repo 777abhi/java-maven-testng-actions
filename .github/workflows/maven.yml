@@ -20,7 +20,7 @@ jobs:
     container:
       image: maven
     services:
-      selenium:
+      selenium1:
         image: selenium/standalone-chrome
         options: --shm-size=2g
     steps:
