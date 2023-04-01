@@ -17,6 +17,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import java.io.File;
@@ -61,14 +62,14 @@ public class RpnCalculatorStepDefinitions {
     public void adding(int arg1, int arg2) throws IOException {
 
 
-    // Create desired capabilities for Chrome browser
-    ChromeOptions options = new ChromeOptions();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setBrowserName(System.getProperty("browser"));
             
     // Specify remote URL for Selenium server
     URL url = new URL(System.getProperty("webdriver.remote.url"));
 
     // Create a RemoteWebDriver instance with the specified capabilities and URL
-    WebDriver driver = new RemoteWebDriver(url, options);
+    WebDriver driver = new RemoteWebDriver(url, capabilities);
 
     // Navigate to a web page and perform tests
     driver.get("http://www.example.com/");
