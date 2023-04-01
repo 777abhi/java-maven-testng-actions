@@ -4,6 +4,8 @@
     <test name="Test">
          <classes>
              <class name="io.cucumber.examples.runner.e2e.RunCucumberTest_e2e_Sanity"/>
+             <class name="io.cucumber.examples.runner.e2e.RunCucumberTest_e2e_Regression"/>
+             <class name="io.cucumber.examples.runner.e2e.RunCucumberTest_e2e_newFeature"/>
           </classes>
      </test> <!-- Test -->
 </suite> <!-- Suite -->
