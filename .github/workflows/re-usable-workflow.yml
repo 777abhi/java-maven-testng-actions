@@ -31,6 +31,11 @@ jobs:
         ports:
           - "5900:5900"
     steps:
-      - name: Run ls
+      - name: Wait for Selenium hub to start
         run: |
-          curl http://hub:4444/wd/hub/status
+          set -e
+          until curl http://hub:4444/wd/hub/status; do
+            echo "Waiting for Selenium hub to start..."
+            sleep 5
+          done
+          echo "Selenium hub is ready!"
