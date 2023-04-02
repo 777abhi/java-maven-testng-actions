@@ -33,4 +33,4 @@ jobs:
     steps:
       - name: Wait for Selenium hub to start
         run: |
-          while ! curl http://hub:4444/wd/hub/status
+          curl http://hub:4444/wd/hub/status
