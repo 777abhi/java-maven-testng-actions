@@ -19,19 +19,17 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: maven
-    services:  
-      hub:
-        image: selenium/hub
-        ports:
-          - "4444:4444"
-      depends_on:
-        - node-chrome1
+    services:
       node-chrome1:
         image: selenium/node-chrome
         env:
           HUB_HOST: hub
         ports:
-          - "5900:5900"
+          - "5900:5900"  
+      hub:
+        image: selenium/hub
+        ports:
+          - "4444:4444"
     steps:
       - name: Wait for Selenium hub to start
         run: |
