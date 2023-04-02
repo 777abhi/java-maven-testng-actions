@@ -30,12 +30,9 @@ jobs:
           HUB_HOST: hub
         ports:
           - "5900:5900"
+      depends_on:
+        - hub
     steps:
       - name: Wait for Selenium hub to start
         run: |
-          set -e
-          until curl http://hub:4444/wd/hub/status; do
-            echo "Waiting for Selenium hub to start..."
-            sleep 5
-          done
-          echo "Selenium hub is ready!"
+          curl http://hub:4444/wd/hub/status; do
