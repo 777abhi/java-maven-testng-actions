@@ -24,15 +24,15 @@ jobs:
         image: selenium/hub
         ports:
           - "4444:4444"
+      depends_on:
+        - node-chrome1
       node-chrome1:
         image: selenium/node-chrome
         env:
           HUB_HOST: hub
         ports:
           - "5900:5900"
-      depends_on:
-        - hub
     steps:
       - name: Wait for Selenium hub to start
         run: |
-          curl http://hub:4444/wd/hub/status; do
+          while ! curl http://hub:4444/wd/hub/status
