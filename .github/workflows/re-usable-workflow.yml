@@ -26,4 +26,4 @@ jobs:
           - 4444:4444
     steps:
       - name: Check if Selenium Hub is running
-        run: curl http://localhost:4444/wd/hub/status
+        run: curl http://selenium:4444/wd/hub/status
