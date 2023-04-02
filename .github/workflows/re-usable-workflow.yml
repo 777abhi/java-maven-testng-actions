@@ -24,12 +24,6 @@ jobs:
         image: selenium/hub:latest
         ports:
           - 4444:4444
-      chrome:
-        image: selenium/node-chrome:latest
-        env:
-          - SE_EVENT_BUS_HOST=selenium
-          - SE_EVENT_BUS_PUBLISH_PORT=4442
-          - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
     steps:
       - name: Check if Selenium Hub is running
         run: curl http://selenium:4444/grid/console
