@@ -19,11 +19,18 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: maven
-    services:
-      selenium:
-        image: selenium/hub:latest
+    services:  
+      hub:
+        image: selenium/hub
         ports:
-          - 4444:4444
+          - "4444:4444"
+      node-chrome1:
+        image: selenium/node-chrome
+        env:
+          HUB_HOST: hub
+        ports:
+          - "5900:5900"
     steps:
-      - name: Check if Selenium Hub is running
-        run: docker ps
+      - name: Run ls
+        run: |
+          curl http://hub:4444/wd/hub/status
