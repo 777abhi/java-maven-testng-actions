@@ -14,6 +14,36 @@ Feature: Basic Arithmetic
     When I add 4 and 7
     Then the result is 11
 
+  @sanity
+  Scenario: Another Addition 6
+  # Try to change one of the values below to provoke a failure
+    When I add 4 and 7
+    Then the result is 11
+
+  @sanity
+  Scenario: Another Addition 2
+  # Try to change one of the values below to provoke a failure
+    When I add 4 and 7
+    Then the result is 11
+
+  @sanity
+  Scenario: Another Addition 3
+  # Try to change one of the values below to provoke a failure
+    When I add 4 and 7
+    Then the result is 11
+
+  @sanity
+  Scenario: Another Addition 4
+  # Try to change one of the values below to provoke a failure
+    When I add 4 and 7
+    Then the result is 11
+
+  @sanity
+  Scenario: Another Addition 5
+  # Try to change one of the values below to provoke a failure
+    When I add 4 and 7
+    Then the result is 11
+
   @regression
   Scenario Outline: Many additions
     Given the previous entries:
