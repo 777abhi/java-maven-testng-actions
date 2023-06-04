@@ -1,5 +1,4 @@
-FROM debian:bullseye-20230502-slim
-
+FROM debian:11.7-slim
 ENV DEBIAN_FRONTEND=noninteractive
 ENV MAVEN_VERSION=3.8.6
 ENV JAVA_VERSION=19.0.1-amzn
