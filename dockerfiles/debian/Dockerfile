@@ -1,4 +1,4 @@
-FROM debian:11.6-slim
+FROM debian:bullseye-20230502-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV MAVEN_VERSION=3.8.6
