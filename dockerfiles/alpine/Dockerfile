@@ -1,4 +1,4 @@
-FROM alpine as build
+FROM alpine:3.18.3 as build
 
 ARG MAVEN_VERSION=3.8.6
 ARG USER_HOME_DIR="/root"
